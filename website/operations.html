@@ -1,0 +1,20 @@
+<header></header>
+<div ng-controller="directiveController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <test-directive first="add.firstnum" second="add.secondnum" title="{{add.title}}" sumbit="addition()"></test-directive>
+                <h2>AddResult:&nbsp;<span class="text-success">{{addResult}}</span></h2>
+            </div>
+            <div class="col-md-4">
+                <test-directive first="mul.firstnum" second="mul.secondnum" title="{{mul.title}}" sumbit="multiplication()"></test-directive>
+                <h2>MulResult:&nbsp;<span class="text-danger">{{mulResult}}</span></h2>
+            </div>
+            <div class="col-md-4">
+                <test-directive first="sub.firstnum" second="sub.secondnum" title="{{sub.title}}" sumbit="subtraction()"></test-directive>
+                <h2>subResult:&nbsp;<span class="text-info">{{subResult}}</span></h2>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

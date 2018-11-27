@@ -1,0 +1,45 @@
+<header></header>
+<div ng-controller="firstController">
+    <h1 class="text-primary text-center">This is {{first}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card card-body" ng-show="myLoader">
+                    <div class="text-center">
+                        <img src="assets/spinner.gif" width="150" height="150">
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead ng-if="info.length">
+                        <tr>
+                            <th>UserId</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div class="card card-body" ng-if="!info.length" ng-hide="myLoader" style="padding:100px">
+                            <div class="text-center">
+                                <h4 class="text-primary">No Results Found ...!</h4>
+                            </div>
+                        </div>
+                        <tr ng-repeat="data in info | filter:test | limitTo:10">
+                            <td>{{data.userId}}</td>
+                            <td>{{data.id}}</td>
+                            <td style="text-transform:capitalize">{{data.title}}</td>
+                            <td>{{data.completed}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="usr">Search:</label>
+                    <input type="text" class="form-control" id="usr" ng-model="test" ng-change="search(test)"
+                        placeholder="search">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
